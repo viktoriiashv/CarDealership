@@ -8,10 +8,10 @@ using CarDealership.Services;
 using CarDealership.Models;
 namespace CarDealership.Controllers
 {
-    public class CarDealershipController : Controller
+    public class ManagerController : Controller
     {
         private ManagerService managerService;
-        public CarDealershipController(ManagerService managerService)
+        public ManagerController(ManagerService managerService)
         {
             this.managerService = managerService;
         }
