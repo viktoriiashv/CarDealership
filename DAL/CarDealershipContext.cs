@@ -15,6 +15,7 @@ namespace CarDealership.DAL
         }
 
         public DbSet<Manager> Managers { get; set; }
+        public DbSet<Car> Cars { get; set; }
     }
 }
 
