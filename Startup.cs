@@ -29,6 +29,7 @@ namespace CarDealership
             services.AddDbContext<CarDealershipContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("CarDealershipDatabase")));
             services.AddTransient<ManagerService>();
+            services.AddTransient<CarService>();
             services.AddControllersWithViews();
             
         }
