@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using CarDealership.Models;
+using CarDealership.DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarDealership
 {
@@ -23,7 +26,9 @@ namespace CarDealership
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<CarDealershipContext>(opt => opt.UseSqlite("Data Source=CarService.db"));
             services.AddControllersWithViews();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
