@@ -7,7 +7,7 @@ namespace CarDealership.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Values",
+                name: "Managers",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -15,30 +15,18 @@ namespace CarDealership.Migrations
                     FirstName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: true),
                     PhoneNumber = table.Column<string>(nullable: true),
-                    AdditionalInfo = table.Column<string>(nullable: true),
-                    ManagerID = table.Column<int>(nullable: true)
+                    AdditionalInfo = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Values", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Values_Values_ManagerID",
-                        column: x => x.ManagerID,
-                        principalTable: "Values",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_Managers", x => x.ID);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Values_ManagerID",
-                table: "Values",
-                column: "ManagerID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Values");
+                name: "Managers");
         }
     }
 }

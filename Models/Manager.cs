@@ -14,7 +14,6 @@ namespace CarDealership.Models
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string AdditionalInfo { get; set; }
-        public virtual ICollection<Manager> Managers { get; set; }
     }
 
 }
