@@ -27,11 +27,11 @@ namespace CarDealership
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CarDealershipContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("CarDealershipDatabase")));
+            options.UseSqlite(Configuration.GetConnectionString("CarDealershipDatabase")));
             services.AddTransient<ManagerService>();
             services.AddTransient<CarService>();
             services.AddControllersWithViews();
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
