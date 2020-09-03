@@ -8,6 +8,8 @@ using CarDealership.Services;
 using CarDealership.Models;
 namespace CarDealership.Controllers
 {
+    [ApiController]
+    [Route("api/")]
     public class ManagerController : Controller
     {
         private ManagerService managerService;
