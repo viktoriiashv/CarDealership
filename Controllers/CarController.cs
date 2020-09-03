@@ -9,7 +9,7 @@ using CarDealership.Services;
 namespace CarDealership.Controllers
 {
     [ApiController]
-    [Route("api/")]
+    [Route("api/cars")]
     public class CarController : Controller
     {
         private CarService carService;
@@ -17,7 +17,7 @@ namespace CarDealership.Controllers
         {
             this.carService = carService;
         }
-        [HttpGet("cars")]
+        [HttpGet]
         public List<Car> GetCars()
         {
             return carService.GetCarsList();

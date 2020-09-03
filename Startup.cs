@@ -30,6 +30,7 @@ namespace CarDealership
             options.UseSqlite(Configuration.GetConnectionString("CarDealershipDatabase")));
             services.AddTransient<ManagerService>();
             services.AddTransient<CarService>();
+            services.AddTransient<DealService>();
             services.AddControllersWithViews();
 
         }

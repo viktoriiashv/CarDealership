@@ -24,6 +24,7 @@ namespace CarDealership.Services
         public Deal AddDeal(Deal deal)
         {
             db.Deals.Add(deal);
+            db.SaveChanges();
             return deal;
         }
     }
