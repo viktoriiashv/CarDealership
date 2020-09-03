@@ -14,6 +14,7 @@ namespace CarDealership.Models
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string AdditionalInfo { get; set; }
+        public ICollection<Deal> Deals { get; set; }
     }
 
 }

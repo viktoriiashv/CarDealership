@@ -20,5 +20,14 @@ namespace CarDealership.Services
         {
             return db.Managers.ToList();
         }
+
+        public Manager GetMaxCountDealManager(DateTime startDate, DateTime endDate)
+        {
+            var query = db.Managers
+               .OrderByDescending(m => m.Deals.Where(d => d.Date <= endDate && d.Date >= startDate).Count())
+               .Where(m => m.Deals.Where(d => d.Date <= endDate && d.Date >= startDate).Count() > 0);
+
+            return query.FirstOrDefault();
+        }
     }
 }

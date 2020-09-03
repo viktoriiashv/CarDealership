@@ -20,8 +20,12 @@ namespace CarDealership.Controllers
         [HttpGet]
         public List<Manager> GetManagers()
         {
-            Console.WriteLine(managerService.GetManagersList());
             return managerService.GetManagersList();
+        }
+        [HttpGet("best/count")]
+        public Manager GetBestCountManagers(DateTime startDate, DateTime endDate)
+        {
+            return managerService.GetMaxCountDealManager(startDate, endDate);
         }
     }
 }

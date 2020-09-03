@@ -13,5 +13,6 @@ namespace CarDealership.Models
         public string Model { get; set; }
         public DateTime Year { get; set; }
         public double Cost { get; set; }
+        public ICollection<Deal> Deals { get; set; }
     }
 }
