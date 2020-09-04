@@ -8,6 +8,8 @@ using CarDealership.Services;
 using CarDealership.Models;
 namespace CarDealership.Controllers
 {
+    [ApiController]
+    [Route("api/managers")]
     public class ManagerController : Controller
     {
         private ManagerService managerService;
@@ -15,7 +17,7 @@ namespace CarDealership.Controllers
         {
             this.managerService = managerService;
         }
-        [HttpGet("managers")]
+        [HttpGet]
         public List<Manager> GetManagers()
         {
             Console.WriteLine(managerService.GetManagersList());
