@@ -18,7 +18,7 @@ namespace CarDealership.Controllers
             this.dealService = dealService;
         }
         [HttpGet]
-        public List<Deal> GetCars()
+        public List<Deal> GetDeals()
         {
             return dealService.GetDealList();
         }
