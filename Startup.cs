@@ -11,7 +11,6 @@ using Microsoft.Extensions.Hosting;
 using CarDealership.DAL;
 using CarDealership.Services;
 using Microsoft.EntityFrameworkCore;
-
 namespace CarDealership
 {
     public class Startup
@@ -27,7 +26,7 @@ namespace CarDealership
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<CarDealershipContext>(options =>
-            options.UseSqlite(Configuration.GetConnectionString("CarDealershipDatabase")));
+            options.UseSqlServer(Configuration.GetConnectionString("CarDealershipDatabase")));
             services.AddTransient<ManagerService>();
             services.AddTransient<CarService>();
             services.AddTransient<DealService>();

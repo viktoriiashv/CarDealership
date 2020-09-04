@@ -24,8 +24,8 @@ namespace CarDealership.Services
         public Manager GetMaxCountDealManager(DateTime startDate, DateTime endDate)
         {
             var query = db.Managers
-               .OrderByDescending(m => m.Deals.Where(d => d.Date <= endDate && d.Date >= startDate).Count())
-               .Where(m => m.Deals.Where(d => d.Date <= endDate && d.Date >= startDate).Count() > 0);
+               .OrderByDescending(m => m.Deals.Where(d => startDate <= d.Date && d.Date <= endDate).Count())
+               .Where(m => m.Deals.Where(d => startDate <= d.Date && d.Date <= endDate).Count() > 0);
 
             return query.FirstOrDefault();
         }
