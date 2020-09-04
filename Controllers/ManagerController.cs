@@ -27,5 +27,12 @@ namespace CarDealership.Controllers
         {
             return managerService.GetMaxCountDealManager(startDate, endDate);
         }
+
+        [HttpGet("bestseller/mark/bysum")]
+        public List<Tuple<Manager, Mark>> GetManagerBestsellerMarkBySum()
+        {
+            return managerService.GetManagerBestsellerMarkBySum();
+        }
+
     }
 }
