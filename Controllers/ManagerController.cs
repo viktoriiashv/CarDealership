@@ -34,5 +34,11 @@ namespace CarDealership.Controllers
             return managerService.GetManagerBestsellerMarkBySum();
         }
 
+        [HttpGet("bestseller/mark/bycount")]
+        public List<Tuple<Manager, Mark>> GetManagerBestsellerMarkByCount()
+        {
+            return managerService.GetManagerBestsellerMarkByCount();
+        }
+
     }
 }
