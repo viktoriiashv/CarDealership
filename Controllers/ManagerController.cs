@@ -39,6 +39,11 @@ namespace CarDealership.Controllers
         {
             return managerService.GetManagerBestsellerMarkByCount();
         }
+        [HttpPost]
+        public Manager PostManager(Manager manager)
+        {
+            return managerService.AddManager(manager);
+        }
 
     }
 }

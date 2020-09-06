@@ -53,6 +53,14 @@ namespace CarDealership.Services
             return managersBestMark;
         }
 
+        public Manager AddManager(Manager manager)
+        {
+            db.Managers.Add(manager);
+            db.SaveChanges();
+            Console.WriteLine(manager.ID);
+            return manager;
+        }
+
         public List<Tuple<Manager, Mark>> GetManagerBestsellerMarkByCount()
         {
             var managersQuery = db.Managers.ToList();
