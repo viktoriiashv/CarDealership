@@ -30,7 +30,7 @@ namespace CarDealership.Controllers
         }
 
         [HttpPost]
-        public Model PostCar(Model model)
+        public Model PostModel(Model model)
         {
             return modelService.AddModel(model);
         }
