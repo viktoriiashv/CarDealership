@@ -46,13 +46,17 @@ namespace CarDealership.Controllers
             return managerService.GetManagerByID(id);
         }
 
-
         [HttpPost]
         public Manager PostManager(Manager manager)
         {
             return managerService.AddManager(manager);
         }
 
+        [HttpDelete("{id}")]
+        public Manager Delete(int id)
+        {
+            return managerService.DeleteManager(id);
+        }
 
     }
 }

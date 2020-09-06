@@ -53,6 +53,15 @@ namespace CarDealership.Services
             return managersBestMark;
         }
 
+        internal Manager DeleteManager(int id)
+        {
+            var q = db.Managers.Where(m => m.ID == id).FirstOrDefault();
+            Manager deletedManager = GetManagerByID(id); 
+            db.Managers.Remove(q);
+            db.SaveChanges();
+            return deletedManager;
+        }
+
         internal Manager GetManagerByID(int id)
         {
             var q = db.Managers.Where(m => m.ID == id).FirstOrDefault();
@@ -63,7 +72,6 @@ namespace CarDealership.Services
         {
             db.Managers.Add(manager);
             db.SaveChanges();
-            Console.WriteLine(manager.ID);
             return manager;
         }
 
