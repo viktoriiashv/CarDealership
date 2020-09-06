@@ -22,5 +22,11 @@ namespace CarDealership.Controllers
         {
             return carService.GetCarsList();
         }
+
+        [HttpGet("{id}")]
+        public Car GetCarById(int id)
+        {
+            return carService.GetCarById(id);
+        }
     }
 }

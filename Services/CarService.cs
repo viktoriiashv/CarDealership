@@ -22,5 +22,10 @@ namespace CarDealership.Services
             return db.Cars.ToList();
         }
 
+        public Car GetCarById(int id)
+        {
+            var q = db.Cars.Find(id);
+            return q;
+        }
     }
 }
