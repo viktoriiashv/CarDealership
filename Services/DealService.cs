@@ -27,5 +27,11 @@ namespace CarDealership.Services
             db.SaveChanges();
             return deal;
         }
+
+        internal Deal GetDealByID(int id)
+        {
+            var q = db.Deals.Find(id);
+            return q;
+        }
     }
 }

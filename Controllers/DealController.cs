@@ -27,5 +27,11 @@ namespace CarDealership.Controllers
         {
             return dealService.AddDeal(deal);
         }
+
+        [HttpGet("{id}")]
+        public Deal GetDealById(int id)
+        {
+            return dealService.GetDealByID(id);
+        }
     }
 }
