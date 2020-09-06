@@ -53,6 +53,12 @@ namespace CarDealership.Services
             return managersBestMark;
         }
 
+        internal Manager GetManagerByID(int id)
+        {
+            var q = db.Managers.Where(m => m.ID == id).FirstOrDefault();
+            return q;
+        }
+
         public Manager AddManager(Manager manager)
         {
             db.Managers.Add(manager);
