@@ -23,7 +23,7 @@ namespace CarDealership.Controllers
             return dealService.GetDealList();
         }
         [HttpPost]
-        public Deal AddDeal(Deal deal)
+        public Deal PostDeal(Deal deal)
         {
             return dealService.AddDeal(deal);
         }
@@ -32,6 +32,12 @@ namespace CarDealership.Controllers
         public Deal GetDealById(int id)
         {
             return dealService.GetDealByID(id);
+        }
+
+        [HttpDelete("{id}")]
+        public Deal DeleteDeal(int id)
+        {
+            return dealService.DeleteDeal(id);
         }
     }
 }

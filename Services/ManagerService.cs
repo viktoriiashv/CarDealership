@@ -47,7 +47,7 @@ namespace CarDealership.Services
         public Manager DeleteManager(int id)
         {
             Manager deletedManager = GetManagerByID(id);
-            db.Managers.Remove(GetManagerByID(id));
+            db.Managers.Remove(deletedManager);
             db.SaveChanges();
             return deletedManager;
         }

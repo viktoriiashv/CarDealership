@@ -28,10 +28,18 @@ namespace CarDealership.Services
             return deal;
         }
 
-        internal Deal GetDealByID(int id)
+        public Deal GetDealByID(int id)
         {
             var q = db.Deals.Find(id);
             return q;
+        }
+
+        public Deal DeleteDeal(int id)
+        {
+            Deal deletedDeal = GetDealByID(id);
+            db.Deals.Remove(deletedDeal);
+            db.SaveChanges();
+            return deletedDeal;
         }
     }
 }
