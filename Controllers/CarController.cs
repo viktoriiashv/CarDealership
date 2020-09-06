@@ -28,5 +28,11 @@ namespace CarDealership.Controllers
         {
             return carService.GetCarById(id);
         }
+
+        [HttpPost]
+        public Car PostCar(Car car)
+        {
+            return carService.AddCar(car);
+        }
     }
 }

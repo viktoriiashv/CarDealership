@@ -27,5 +27,12 @@ namespace CarDealership.Services
             var q = db.Cars.Find(id);
             return q;
         }
+
+        public Car AddCar(Car car)
+        {
+            db.Cars.Add(car);
+            db.SaveChanges();
+            return car;
+        }
     }
 }
