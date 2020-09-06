@@ -34,5 +34,13 @@ namespace CarDealership.Services
             db.SaveChanges();
             return car;
         }
+
+        public Car DeleteCar(int id)
+        {
+            Car deletedCar = GetCarById(id);
+            db.Cars.Remove(deletedCar);
+            db.SaveChanges();
+            return deletedCar;
+        }
     }
 }

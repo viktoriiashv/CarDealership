@@ -34,5 +34,11 @@ namespace CarDealership.Controllers
         {
             return carService.AddCar(car);
         }
+
+        [HttpDelete("{id}")]
+        public Car DeleteCar(int id)
+        {
+            return carService.DeleteCar(id);
+        }
     }
 }
