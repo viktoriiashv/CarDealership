@@ -40,5 +40,11 @@ namespace CarDealership.Controllers
         {
             return carService.DeleteCar(id);
         }
+
+        [HttpPatch("{id}")]
+        public Car PatchCar(int id, [FromBody] Car body)
+        {
+            return carService.EditCar(id, body);
+        }
     }
 }

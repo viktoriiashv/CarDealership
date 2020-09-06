@@ -42,5 +42,32 @@ namespace CarDealership.Services
             db.SaveChanges();
             return deletedCar;
         }
+
+        public Car EditCar(int id, Car body)
+        {
+            Car changedCar = GetCarById(id);
+            if (body.Year!= 0)
+            {
+                changedCar.Year = body.Year;
+            }
+            if (body.Cost != 0)
+            {
+                changedCar.Cost = body.Cost;
+            }
+            if (body.ClassID != 0)
+            {
+                changedCar.ClassID = body.ClassID;
+            }
+            if (body.MarkID != 0)
+            {
+                changedCar.MarkID = body.MarkID;
+            }
+            if (body.ModelID != 0)
+            {
+                changedCar.ModelID = body.ModelID;
+            }
+            db.SaveChanges();
+            return changedCar;
+        }
     }
 }
