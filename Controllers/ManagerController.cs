@@ -53,9 +53,15 @@ namespace CarDealership.Controllers
         }
 
         [HttpDelete("{id}")]
-        public Manager Delete(int id)
+        public Manager DeleteManager(int id)
         {
             return managerService.DeleteManager(id);
+        }
+
+        [HttpPatch("{id}")]
+        public Manager PatchManager(int id, [FromBody] Manager body)
+        {
+            return managerService.EditManager(id, body);
         }
 
     }
