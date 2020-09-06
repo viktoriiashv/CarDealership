@@ -39,5 +39,11 @@ namespace CarDealership.Controllers
         {
             return dealService.DeleteDeal(id);
         }
+
+        [HttpPatch("{id}")]
+        public Deal PatchDeal(int id, [FromBody] Deal body)
+        {
+            return dealService.EditDeal(id, body);
+        }
     }
 }

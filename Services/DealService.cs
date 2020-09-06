@@ -41,5 +41,25 @@ namespace CarDealership.Services
             db.SaveChanges();
             return deletedDeal;
         }
+
+        public Deal EditDeal(int id, Deal body)
+        {
+            Deal changedDeal = GetDealByID(id);
+            Console.WriteLine(body.Date);
+            if (body.CarID != 0)
+            {
+                changedDeal.CarID = body.CarID;
+            }
+            if (body.Date != null)
+            {
+                changedDeal.Date = body.Date;
+            }
+            if (body.ManagerID != 0)
+            {
+                changedDeal.ManagerID = body.ManagerID;
+            }
+            db.SaveChanges();
+            return changedDeal;
+        }
     }
 }
