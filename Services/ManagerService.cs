@@ -80,7 +80,7 @@ namespace CarDealership.Services
                     .ToList()
                     .OrderByDescending(x => x.Count);//get bestseller mark by count, it`s on top
 
-                var mq = db.Mark.Where(m => m.ID == q.FirstOrDefault().Key);//select mark entity by id
+                var mq = db.Marks.Where(m => m.ID == q.FirstOrDefault().Key);//select mark entity by id
 
                 managersBestMark.Add(Tuple.Create(manager, mq.FirstOrDefault()));
             }
@@ -103,7 +103,7 @@ namespace CarDealership.Services
                     .ToList()
                     .OrderByDescending(x => x.Sum);//get bestseller mark by sum, it`s on top
 
-                var mq = db.Mark.Where(m => m.ID == q.FirstOrDefault().Key);//select mark entity by id
+                var mq = db.Marks.Where(m => m.ID == q.FirstOrDefault().Key);//select mark entity by id
 
                 managersBestMark.Add(Tuple.Create(manager, mq.FirstOrDefault()));
             }

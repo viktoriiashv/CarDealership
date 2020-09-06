@@ -17,7 +17,7 @@ namespace CarDealership.DAL
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Deal> Deals { get; set; }
-        public DbSet<Mark> Mark { get; set; }
+        public DbSet<Mark> Marks { get; set; }
         public DbSet<Class> Classes { get; set; }
         public DbSet<Model> Models { get; set; }
     }
