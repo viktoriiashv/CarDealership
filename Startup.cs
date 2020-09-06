@@ -32,6 +32,7 @@ namespace CarDealership
             services.AddTransient<DealService>();
             services.AddTransient<ModelService>();
             services.AddTransient<ClassService>();
+            services.AddTransient<MarkService>();
             services.AddControllersWithViews();
 
         }
